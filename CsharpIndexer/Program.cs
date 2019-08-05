@@ -33,6 +33,8 @@ namespace CsharpIndexer
 
             else
                 Console.WriteLine("Please Enter The Number");
+
+            Console.ReadKey();
         }
 
         //   another usage 
