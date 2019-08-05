@@ -11,41 +11,40 @@ namespace CsharpIndexer
     {
         static void Main(string[] args)
         {
-            Test T = new Test();
-
-
             Console.WriteLine("Enter number..  ");
+
             var key = Console.ReadLine();
 
-            //out n variable 
+            // out n variable 
             var isNumeric = int.TryParse(key, out int n);
 
+            // new instance to Test class
+            Test T = new Test(n);
+
             // define this method 
-            // Another(n);
+            // Another();
 
             if (isNumeric)
             {
                 for (int i = 0; i < n; i++)
                 {
                     T[i] = i;
+                    Console.WriteLine(" " + T[i].ToString());
                 }
             }
 
             else
                 Console.WriteLine("Please Enter The Number");
-
             Console.ReadKey();
         }
 
         //   another usage 
-        static void Another(int count)
+        static void Another()
         {
-            Test T = new Test(count);
+            Test T = new Test();
 
-            for (int i = 0; i < count; i++)
-            {
-                T[i] = i;
-            }
+            T[0] = 5;
+            Console.WriteLine(T[0]);
         }
     }
 }
